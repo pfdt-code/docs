@@ -1,1 +1,2 @@
 gitKeys = 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
+video =  ffmpeg -rtsp_transport tcp        -fflags nobuffer -flags low_delay -probesize 32 -analyzeduration 0 -strict experimental        -i rtsp://192.168.144.25:8554/main.264        -c:v libx264 -preset ultrafast -tune zerolatency -profile:v baseline        -b:v 400k -maxrate 500k -bufsize 1000k        -vf scale=640:360 -r 20        -g 40 -keyint_min 40 -x264-params "nal-hrd=cbr:force-cfr=1"        -c:a copy -f mpegts        "srt://100.110.213.45:9000?mode=caller&latency=400000&pkt_size=1316&tlpktdrop=1"
